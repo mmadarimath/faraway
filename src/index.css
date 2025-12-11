@@ -1,0 +1,196 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap");
+
+:root {
+  --accent: #4f8cff;
+  --accent-dark: #3c6cd6;
+  --bg-light: #f7f8fa;
+  --bg-dark: #1d1f21;
+  --card-bg: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #fafafa;
+  --radius: 1.2rem;
+  --transition: 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-size: 1.6rem;
+}
+
+/* Layout */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 5.2rem;
+  padding: 2.4rem 0;
+  background: var(--accent);
+  color: var(--text-light);
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+/* Add Form */
+.add-form {
+  background-color: var(--accent-dark);
+  padding: 2.4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--text-light);
+}
+
+button,
+select,
+input {
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+  font-family: inherit;
+  border: 1px solid #e5e5e5;
+  border-radius: var(--radius);
+  padding: 1.2rem 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover,
+select:hover,
+input:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.15);
+}
+
+.add-form button {
+  background-color: var(--accent);
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.add-form button:hover {
+  background-color: var(--accent-dark);
+}
+
+/* List Container */
+.list {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 4rem 0;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap:1.8rem;
+  align-items: center;
+}
+
+/* Actions */
+.actions button,
+.list select {
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  border-radius: var(--radius);
+  background-color: #2a2d2f;
+  border: 1px solid #3a3d3f;
+}
+
+.actions button:hover,
+.list select:hover {
+  background-color: #3a3d3f;
+  border-color: var(--accent);
+}
+
+/* Scroll styling */
+.list ul {
+  list-style: none;
+  width: 90%;
+  overflow-y: auto;
+  padding-right: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.8rem;
+}
+
+.list ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list ul::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+/* List Item */
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: #2b2e31;
+  padding: 1.6rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Delete button */
+.list li button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  transition: var(--transition);
+  position: relative;
+  margin-left: auto;
+}
+
+.list li button:hover {
+  color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* Stats Footer */
+.stats {
+  background-color: var(--card-bg);
+  text-align: center;
+  font-weight: 600;
+  padding: 2.4rem 0;
+  border-top: 1px solid #e5e5e5;
+}
