@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Item } from "./Item";
+import Item from "./Item";
 
-export default function PackingList({ items, onDeleteItem, onToggleItem, onClearList }) {
+export default function PackingList({
+  items,
+  onDeleteItem,
+  onToggleItem,
+  onClearList,
+}) {
   const [sortBy, setSortBy] = useState("input");
 
-  let sortedItems;
-
-  if (sortBy === "input") {
-    sortedItems = items;
-  }
+  let sortedItems = items;
 
   if (sortBy === "description") {
     sortedItems = items
@@ -30,7 +31,8 @@ export default function PackingList({ items, onDeleteItem, onToggleItem, onClear
             key={item.id}
             item={item}
             onDeleteItem={onDeleteItem}
-            onToggleItem={onToggleItem} />
+            onToggleItem={onToggleItem}
+          />
         ))}
       </ul>
 
@@ -42,7 +44,16 @@ export default function PackingList({ items, onDeleteItem, onToggleItem, onClear
             <option value="packed">Sort by packed status</option>
           </select>
 
-          <button onClick={onClearList}>Clear List</button>
+          <button
+            type="button"
+            onClick={() =>
+              window.confirm("Are you sure you want to clear the list?")
+                ? onClearList()
+                : null
+            }
+          >
+            Clear List
+          </button>
         </div>
       )}
     </div>

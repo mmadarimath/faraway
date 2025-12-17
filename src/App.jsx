@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import { Logo } from "./Logo";
-import { Form } from "./Form";
-import { PackingList } from "./PackingList";
-import { Stats } from "./Stats";
+import Logo from "./Logo";
+import Form from "./Form";
+import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -24,11 +24,8 @@ export default function App() {
     );
   }
 
-  function handleClearList() {
-    const confirmed = window.confirm(
-      "Do you really want to clear all the itmes?"
-    );
-    if (confirmed) setItems([]);
+  function handleClearList(){
+    setItems([])
   }
 
   return (
@@ -45,5 +42,3 @@ export default function App() {
     </div>
   );
 }
-
-
